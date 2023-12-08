@@ -77,14 +77,6 @@ orgs.newOrg('eclipse-iceoryx') {
           secret: "********",
         },
       ],
-      secrets: [
-        orgs.newRepoSecret('AXIVION_READ_API_TOKEN') {
-          value: "********",
-        },
-        orgs.newRepoSecret('AXIVION_TRIGGER_TOKEN') {
-          value: "********",
-        },
-      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('[master][release_]*') {
           dismisses_stale_reviews: true,
