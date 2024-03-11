@@ -80,60 +80,6 @@ orgs.newOrg('eclipse-iceoryx') {
         },
       ],
     },
-    orgs.newRepo('iceoryx2') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      default_branch: "main",
-      delete_branch_on_merge: true,
-      dependabot_security_updates_enabled: true,
-      description: "Eclipse iceoryx2™ - true zero-copy inter-process-communication in pure Rust",
-      has_discussions: true,
-      homepage: "https://iceoryx.io",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
-      topics+: [
-        "eclipse",
-        "iceoryx",
-        "inter-process-communication",
-        "ipc",
-        "middleware",
-        "publish-subscribe",
-        "pubsub",
-        "request-response",
-        "rpc",
-        "rust",
-        "shared-memory",
-        "zero-copy"
-      ],
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
-      webhooks: [
-        orgs.newRepoWebhook('https://ci.eclipse.org/iceoryx/github-webhook/') {
-          content_type: "json",
-          events+: [
-            "pull_request",
-            "push"
-          ],
-        },
-        orgs.newRepoWebhook('https://webhooks.gitter.im/e/5578e863b0288c22e677') {
-          content_type: "json",
-          events+: [
-            "*"
-          ],
-          secret: "********",
-        },
-      ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('[main][release_]*') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
-      ],
-    },
     orgs.newRepo('iceoryx-automotive-soa') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -214,6 +160,58 @@ orgs.newOrg('eclipse-iceoryx') {
       },
       environments: [
         orgs.newEnvironment('github-pages'),
+      ],
+    },
+    orgs.newRepo('iceoryx2') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      description: "Eclipse iceoryx2™ - true zero-copy inter-process-communication in pure Rust",
+      has_discussions: true,
+      homepage: "https://iceoryx.io",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      topics+: [
+        "eclipse",
+        "iceoryx",
+        "inter-process-communication",
+        "ipc",
+        "middleware",
+        "publish-subscribe",
+        "pubsub",
+        "request-response",
+        "rpc",
+        "rust",
+        "shared-memory",
+        "zero-copy"
+      ],
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      webhooks: [
+        orgs.newRepoWebhook('https://ci.eclipse.org/iceoryx/github-webhook/') {
+          content_type: "json",
+          events+: [
+            "pull_request",
+            "push"
+          ],
+        },
+        orgs.newRepoWebhook('https://webhooks.gitter.im/e/5578e863b0288c22e677') {
+          content_type: "json",
+          events+: [
+            "*"
+          ],
+          secret: "********",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('[main][release_]*') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
       ],
     },
   ],
