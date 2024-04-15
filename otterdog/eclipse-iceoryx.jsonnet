@@ -78,6 +78,11 @@ orgs.newOrg('eclipse-iceoryx') {
           requires_strict_status_checks: true,
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('CODECOV_TOKEN') {
+          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-upload-token",
+        },
+      ],
     },
     orgs.newRepo('iceoryx-automotive-soa') {
       allow_merge_commit: true,
@@ -140,6 +145,11 @@ orgs.newOrg('eclipse-iceoryx') {
           requires_pull_request: false,
           requires_status_checks: false,
           requires_strict_status_checks: true,
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('CODECOV_TOKEN') {
+          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-rs-upload-token",
         },
       ],
     },
@@ -210,6 +220,11 @@ orgs.newOrg('eclipse-iceoryx') {
           required_approving_review_count: 1,
           requires_status_checks: false,
           requires_strict_status_checks: true,
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('CODECOV_TOKEN') {
+          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx2-upload-token",
         },
       ],
     },
