@@ -80,7 +80,7 @@ orgs.newOrg('eclipse-iceoryx') {
       ],
       secrets: [
         orgs.newRepoSecret('CODECOV_TOKEN') {
-          value: "TBD",
+          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-upload-token",
         },
       ],
     },
@@ -149,7 +149,7 @@ orgs.newOrg('eclipse-iceoryx') {
       ],
       secrets: [
         orgs.newRepoSecret('CODECOV_TOKEN') {
-          value: "TBD",
+          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-rs-upload-token",
         },
       ],
     },
@@ -224,7 +224,7 @@ orgs.newOrg('eclipse-iceoryx') {
       ],
       secrets: [
         orgs.newRepoSecret('CODECOV_TOKEN') {
-          value: "TBD",
+          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx2-upload-token",
         },
       ],
     },
