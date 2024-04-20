@@ -128,7 +128,6 @@ orgs.newOrg('eclipse-iceoryx') {
     orgs.newRepo('iceoryx-rs') {
       allow_squash_merge: false,
       allow_update_branch: false,
-      default_branch: "master",
       delete_branch_on_merge: false,
       description: "Rust wrapper for Eclipse iceoryx™ - true zero-copy inter-process-communication",
       has_discussions: true,
@@ -140,7 +139,7 @@ orgs.newOrg('eclipse-iceoryx') {
         default_workflow_permissions: "write",
       },
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('master') {
+        orgs.newBranchProtectionRule('main') {
           required_approving_review_count: null,
           requires_pull_request: false,
           requires_status_checks: false,
