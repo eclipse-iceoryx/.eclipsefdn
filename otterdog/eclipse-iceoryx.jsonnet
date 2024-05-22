@@ -14,8 +14,6 @@ orgs.newOrg('eclipse-iceoryx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -29,8 +27,6 @@ orgs.newOrg('eclipse-iceoryx') {
       description: "Eclipse iceoryx™ - true zero-copy inter-process-communication",
       has_discussions: true,
       homepage: "https://iceoryx.io",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "autosar-adaptive",
         "client-server",
@@ -89,8 +85,6 @@ orgs.newOrg('eclipse-iceoryx') {
       delete_branch_on_merge: false,
       description: "Example that shows how a service-oriented communication API can be implemented on top of iceoryx",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "ara-com",
         "automotive",
@@ -106,8 +100,6 @@ orgs.newOrg('eclipse-iceoryx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -117,8 +109,6 @@ orgs.newOrg('eclipse-iceoryx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -131,8 +121,6 @@ orgs.newOrg('eclipse-iceoryx') {
       description: "Rust wrapper for Eclipse iceoryx™ - true zero-copy inter-process-communication",
       has_discussions: true,
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -159,8 +147,6 @@ orgs.newOrg('eclipse-iceoryx') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -176,8 +162,6 @@ orgs.newOrg('eclipse-iceoryx') {
       description: "Eclipse iceoryx2™ - true zero-copy inter-process-communication in pure Rust",
       has_discussions: true,
       homepage: "https://iceoryx.io",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "eclipse",
         "iceoryx",
