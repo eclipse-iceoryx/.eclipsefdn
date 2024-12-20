@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-iceoryx') {
+orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
   settings+: {
     description: "",
     web_commit_signoff_required: false,
