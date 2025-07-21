@@ -209,5 +209,49 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         },
       ],
     },
+    orgs.newRepo('meta-yocto-iceoryx2') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      description: "Yocto Layer for Eclipse iceoryx2™",
+      has_discussions: true,
+      homepage: "https://iceoryx.io",
+      topics+: [
+        "eclipse",
+        "iceoryx",
+        "inter-process-communication",
+        "ipc",
+        "middleware",
+        "publish-subscribe",
+        "pubsub",
+        "request-response",
+        "rpc",
+        "rust",
+        "shared-memory",
+        "yocto",
+        "zero-copy"
+      ],
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      webhooks: [
+        orgs.newRepoWebhook('https://ci.eclipse.org/iceoryx/github-webhook/') {
+          content_type: "json",
+          events+: [
+            "pull_request",
+            "push"
+          ],
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('[main][release_]*') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+          requires_status_checks: false,
+          requires_strict_status_checks: true,
+        },
+      ],
+    },
   ],
 }
