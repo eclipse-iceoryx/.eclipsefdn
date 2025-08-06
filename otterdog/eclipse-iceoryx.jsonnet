@@ -209,7 +209,8 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         },
       ],
     },
-    orgs.newRepo('meta-yocto-iceoryx2') {
+    orgs.newRepo('meta-iceoryx2') {
+      aliases: ['meta-yocto-iceoryx2'],
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
