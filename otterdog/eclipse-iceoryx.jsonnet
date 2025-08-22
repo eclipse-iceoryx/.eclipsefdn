@@ -161,6 +161,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       description: "Eclipse iceoryx2™ - true zero-copy inter-process-communication in pure Rust",
       has_discussions: true,
       homepage: "https://iceoryx.io",
+      gh_pages_build_type: "workflow",
       topics+: [
         "eclipse",
         "iceoryx",
