@@ -181,7 +181,13 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         default_workflow_permissions: "write",
       },
       environments: [
-        orgs.newEnvironment('github-pages'),
+        orgs.newEnvironment('github-pages') {
+          deployment_branch_policy: "selected",
+          branch_policies: [
+            "main",
+            "tag:v*"
+          ],
+        },
       ],
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/iceoryx/github-webhook/') {
