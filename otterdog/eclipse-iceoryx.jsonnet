@@ -256,7 +256,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('[main][release_]*') {
+        orgs.newBranchProtectionRule('^(main|release_.*)$') {
           dismisses_stale_reviews: true,
           required_approving_review_count: 1,
           requires_status_checks: false,
