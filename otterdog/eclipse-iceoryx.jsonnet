@@ -1,5 +1,19 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
+local custom_branch_protection_rule(branch_pattern, approver_count) =
+  orgs.newRepoRuleset(branch_pattern) {
+    include_refs+: [
+      std.format("refs/heads/%s", branch_pattern),
+    ],
+    required_pull_request+: {
+      dismisses_stale_reviews: true,
+      required_approving_review_count: approver_count,
+    },
+    required_status_checks+: {
+      strict: true,
+    }
+  };
+
 orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
   settings+: {
     description: "",
@@ -64,12 +78,20 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
           secret: "********",
         },
       ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('[main][release_]*') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
+          required_status_checks+: {
+            status_checks+: [
+              "build-test-ubuntu"
+            ],
+          },
+        },
+        custom_branch_protection_rule(branch_pattern="release_*", approver_count=1) {
+          required_status_checks+: {
+            status_checks+: [
+              "build-test-ubuntu"
+            ],
+          },
         },
       ],
       secrets: [
@@ -124,13 +146,8 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: null,
-          requires_pull_request: false,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1),
       ],
       secrets: [
         orgs.newRepoSecret('CODECOV_TOKEN') {
@@ -205,12 +222,20 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
           secret: "********",
         },
       ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('[main][release_]*') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
+          required_status_checks+: {
+            status_checks+: [
+              "x86_64"
+            ],
+          },
+        },
+        custom_branch_protection_rule(branch_pattern="release_*", approver_count=1) {
+          required_status_checks+: {
+            status_checks+: [
+              "x86_64"
+            ],
+          },
         },
       ],
       secrets: [
@@ -255,13 +280,9 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
           ],
         },
       ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('^(main|release_.*)$') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1),
+        custom_branch_protection_rule(branch_pattern="release_*", approver_count=1),
       ],
     },
   ],
