@@ -10,7 +10,7 @@ local custom_branch_protection_rule(branch_pattern, approver_count) =
       required_approving_review_count: approver_count,
     },
     required_status_checks+: {
-      strict: true,
+      strict: false,
     }
   };
 
