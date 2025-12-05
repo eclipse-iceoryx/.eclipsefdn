@@ -249,6 +249,46 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      description: "C-Sharp Language Binding for Eclipse iceoryx2™",
+      has_discussions: true,
+      topics+: [
+        "eclipse",
+        "iceoryx",
+        "inter-process-communication",
+        "ipc",
+        "middleware",
+        "publish-subscribe",
+        "pubsub",
+        "request-response",
+        "rpc",
+        "rust",
+        "shared-memory",
+        "zero-copy",
+        "dotnet",
+        "csharp",
+      ],
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      webhooks: [
+        orgs.newRepoWebhook('https://ci.eclipse.org/iceoryx/github-webhook/') {
+          content_type: "json",
+          events+: [
+            "pull_request",
+            "push"
+          ],
+        },
+      ],
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1),
+        custom_branch_protection_rule(branch_pattern="release_*", approver_count=1),
+      ],
+    },
+    orgs.newRepo('iceoryx2-csharp') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
       description: "Yocto Layer for Eclipse iceoryx2™",
       has_discussions: true,
       homepage: "https://iceoryx.io",
@@ -264,7 +304,8 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         "rpc",
         "rust",
         "shared-memory",
-        "yocto",
+        "dotnet",
+        "csharp",
         "zero-copy"
       ],
       web_commit_signoff_required: false,
