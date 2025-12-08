@@ -31,6 +31,10 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
+        },
+      ],
     },
     orgs.newRepo('iceoryx') {
       allow_merge_commit: true,
@@ -116,6 +120,12 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
+        },
+        custom_branch_protection_rule(branch_pattern="release_*", approver_count=1) {
+        },
+      ],
     },
     orgs.newRepo('iceoryx-gateway-dds') {
       allow_merge_commit: true,
@@ -125,6 +135,12 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
+        },
+        custom_branch_protection_rule(branch_pattern="release_*", approver_count=1) {
+        },
+      ],
     },
     orgs.newRepo('iceoryx-project-template') {
       allow_merge_commit: true,
@@ -134,6 +150,10 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
+        },
+      ],
     },
     orgs.newRepo('iceoryx-rs') {
       allow_squash_merge: false,
@@ -169,6 +189,10 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       },
       environments: [
         orgs.newEnvironment('github-pages'),
+      ],
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
+        },
       ],
     },
     orgs.newRepo('iceoryx2') {
