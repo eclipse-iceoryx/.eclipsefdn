@@ -273,7 +273,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      description: "C-Sharp Language Binding for Eclipse iceoryx2™",
+      description: "Yocto Layer for Eclipse iceoryx2™",
       has_discussions: true,
       topics+: [
         "eclipse",
