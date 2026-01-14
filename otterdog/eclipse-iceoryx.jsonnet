@@ -255,6 +255,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
           },
         },
         custom_branch_protection_rule(branch_pattern="release_*", approver_count=1) {
+          allows_creations: true,
           required_status_checks+: {
             status_checks+: [
               "mandatory-checks"
