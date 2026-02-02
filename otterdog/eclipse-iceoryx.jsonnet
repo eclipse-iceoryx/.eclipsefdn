@@ -35,6 +35,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx') {
       allow_merge_commit: true,
@@ -103,6 +104,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
           value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-upload-token",
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-automotive-soa') {
       allow_merge_commit: true,
@@ -126,6 +128,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         custom_branch_protection_rule(branch_pattern="release_*", approver_count=1) {
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-gateway-dds') {
       allow_merge_commit: true,
@@ -141,6 +144,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         custom_branch_protection_rule(branch_pattern="release_*", approver_count=1) {
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-project-template') {
       allow_merge_commit: true,
@@ -154,6 +158,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-rs') {
       allow_squash_merge: false,
@@ -174,6 +179,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
           value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-rs-upload-token",
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-web') {
       allow_merge_commit: true,
@@ -194,6 +200,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         custom_branch_protection_rule(branch_pattern="main", approver_count=1) {
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx2') {
       allow_merge_commit: true,
@@ -268,6 +275,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
           value: "pass:bots/technology.iceoryx/codecov.io/iceoryx2-upload-token",
         },
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('meta-iceoryx2') {
       aliases: ['meta-yocto-iceoryx2'],
@@ -309,6 +317,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         custom_branch_protection_rule(branch_pattern="main", approver_count=1),
         custom_branch_protection_rule(branch_pattern="release_*", approver_count=1),
       ],
+      private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx2-csharp') {
       allow_merge_commit: true,
@@ -350,6 +359,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         custom_branch_protection_rule(branch_pattern="main", approver_count=1),
         custom_branch_protection_rule(branch_pattern="release_*", approver_count=1),
       ],
+      private_vulnerability_reporting_enabled: true,
     },
   ],
 }
