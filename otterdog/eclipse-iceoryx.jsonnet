@@ -229,6 +229,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
         default_workflow_permissions: "write",
       },
       environments: [
+        orgs.newEnvironment('copilot'),
         orgs.newEnvironment('github-pages') {
           deployment_branch_policy: "selected",
           branch_policies: [
