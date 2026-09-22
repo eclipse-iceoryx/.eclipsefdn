@@ -11,6 +11,7 @@ local custom_branch_protection_rule(branch_pattern, approver_count) =
     },
     required_status_checks+: {
       strict: false,
+      do_not_enforce_on_create: true,
     }
   };
 
