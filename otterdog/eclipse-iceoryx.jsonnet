@@ -363,5 +363,47 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       ],
       private_vulnerability_reporting_enabled: true,
     },
+    orgs.newRepo('iceoryx2-go') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      description: "Go Language Binding for Eclipse iceoryx2™",
+      has_discussions: true,
+      homepage: "https://iceoryx.io",
+      topics+: [
+        "eclipse",
+        "iceoryx",
+        "inter-process-communication",
+        "ipc",
+        "middleware",
+        "publish-subscribe",
+        "pubsub",
+        "request-response",
+        "rpc",
+        "rust",
+        "shared-memory",
+        "go",
+        "golang",
+        "zero-copy"
+      ],
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      webhooks: [
+        orgs.newRepoWebhook('https://ci.eclipse.org/iceoryx/github-webhook/') {
+          content_type: "json",
+          events+: [
+            "pull_request",
+            "push"
+          ],
+        },
+      ],
+      rulesets: [
+        custom_branch_protection_rule(branch_pattern="main", approver_count=1),
+        custom_branch_protection_rule(branch_pattern="release_*", approver_count=1),
+      ],
+      private_vulnerability_reporting_enabled: true,
+    },
   ],
 }
