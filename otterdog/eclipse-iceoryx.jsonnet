@@ -210,9 +210,9 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      description: "Eclipse iceoryx2™ - true zero-copy inter-process-communication with a Rust core",
+      description: "Eclipse iceoryx2™ - the true zero-copy data plane",
       has_discussions: true,
-      homepage: "https://ekxide.github.io/iceoryx2-book",
+      homepage: "https://iceoryx.io/",
       gh_pages_build_type: "workflow",
       topics+: [
         "eclipse",
