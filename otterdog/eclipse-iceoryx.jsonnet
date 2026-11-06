@@ -212,7 +212,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       dependabot_security_updates_enabled: true,
       description: "Eclipse iceoryx2™ - the true zero-copy data plane",
       has_discussions: true,
-      homepage: "https://ekxide.github.io/iceoryx2-book",
+      homepage: "https://iceoryx.io/",
       gh_pages_build_type: "workflow",
       topics+: [
         "eclipse",
