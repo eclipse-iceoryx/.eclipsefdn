@@ -165,6 +165,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-rs') {
+      archived: true,
       allow_squash_merge: false,
       allow_update_branch: false,
       delete_branch_on_merge: false,
