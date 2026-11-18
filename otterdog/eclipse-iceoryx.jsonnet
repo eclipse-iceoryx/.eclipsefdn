@@ -179,11 +179,6 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       rulesets: [
         custom_branch_protection_rule(branch_pattern="main", approver_count=1),
       ],
-      secrets: [
-        orgs.newRepoSecret('CODECOV_TOKEN') {
-          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-rs-upload-token",
-        },
-      ],
       private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-web') {
