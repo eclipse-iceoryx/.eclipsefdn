@@ -165,6 +165,7 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       private_vulnerability_reporting_enabled: true,
     },
     orgs.newRepo('iceoryx-rs') {
+      archived: true,
       allow_squash_merge: false,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -177,11 +178,6 @@ orgs.newOrg('technology.iceoryx', 'eclipse-iceoryx') {
       },
       rulesets: [
         custom_branch_protection_rule(branch_pattern="main", approver_count=1),
-      ],
-      secrets: [
-        orgs.newRepoSecret('CODECOV_TOKEN') {
-          value: "pass:bots/technology.iceoryx/codecov.io/iceoryx-rs-upload-token",
-        },
       ],
       private_vulnerability_reporting_enabled: true,
     },
